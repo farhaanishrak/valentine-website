@@ -3,12 +3,12 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { Pacifico } from 'next/font/google';
+import { Playfair_Display } from 'next/font/google'
 
-const pacifico = Pacifico({ 
-  weight: '400',
+const playfairDisplay = Playfair_Display({ 
+  weight: ['400', '700'],
   subsets: ['latin'] 
-});
+})
 
 export default function Home() {
   const router = useRouter();
@@ -127,21 +127,20 @@ export default function Home() {
       <div className="text-center relative z-10">
         {/* Heart Image - Add your heart image to /public/images/heart.png */}
         <div className="mb-4 sm:mb-8 flex justify-center">
-          <div className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] bg-red-200 rounded-lg shadow-lg flex items-center justify-center">
-            {/* <Image 
+          <div className="w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] rounded-lg shadow-lg overflow-hidden">
+            <Image 
               src="/images/heart.png" 
               alt="Heart" 
-              width={300} 
-              height={300}
-              className="rounded-lg shadow-lg"
-            /> */}
-            <span className="text-7xl sm:text-9xl">❤️</span>
+              width={400} 
+              height={400}
+              className="rounded-lg shadow-lg w-full h-full object-cover"
+            />
           </div>
         </div>
 
         {/* Heading */}
-        <h1 className={`${pacifico.className} text-3xl sm:text-4xl md:text-5xl text-red-600 mb-6 sm:mb-8 animate-pulse px-4`}>
-          Will you be my Valentine?
+        <h1 className={`${playfairDisplay.className} text-3xl sm:text-4xl md:text-5xl text-red-600 mb-6 sm:mb-8 animate-pulse px-4`}>
+          Will you be my Valentine, Purno?
         </h1>
 
         {/* Buttons Container */}
@@ -173,6 +172,13 @@ export default function Home() {
             {getNoButtonText()}
           </button>
         </div>
+
+        {/* Teasing Message */}
+        {clickCount >= 4 && (
+          <p className={`${playfairDisplay.className} text-red-500 text-lg sm:text-xl mt-4 animate-bounce italic`}>
+            Now you have no other choice now hehe!
+          </p>
+        )}
       </div>
     </div>
   );
