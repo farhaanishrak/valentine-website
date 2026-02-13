@@ -194,7 +194,7 @@ export default function Success() {
                 {/* <span className="text-gray-500 text-sm">Add qr.svg to /public/images/</span> */}
               </div>
               <a 
-                href="https://open.spotify.com/playlist/4g9ckIgTW2Kz0IoaXl23D3?si=d3dc10ed067b4e4d&pt=d454da6a02f136ee8a8737e9d6c7baef" 
+                href="https://open.spotify.com/playlist/4g9ckIgTW2Kz0IoaXl23D3?si=bb7971a96b744462" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-red-500 hover:text-red-700 text-sm underline transition-colors"
